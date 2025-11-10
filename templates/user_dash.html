@@ -18,7 +18,7 @@
     <div id="canvas">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Welcome User1</a>
+          <a class="navbar-brand" href="#">Welcome {{this_user.username}}</a>
           <!-- <a class="nav-link active" aria-current="page" href="#">Requests</a> -->
            <div class="d-flex">
           <form class="d-flex">
@@ -26,7 +26,7 @@
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
           <!-- <a class="nav-link active bar mx-3" href="#">Requests</a> -->
-          <a class="btn btn-light mx-3" href="#">Requests</a>
+          <a class="btn btn-light mx-3" href="/user/requests/{{this_user.id}}">Requests</a>
           </div>
           <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -60,18 +60,19 @@
               </tr>
             </thead>
             <tbody>
+              {% for prod in all_prod %}
               <tr>
-                <th scope="row">1</th>
-                <td>Product1</td>
-                <td>Category1</td>
-                <td>10</td>
-                <td>100</td>
-                <td>available</td>
+                <th scope="row">{{prod.id}}</th>
+                <td>{{prod.name}}</td>
+                <td>{{prod.category}}</td>
+                <td>{{prod.quantity}}</td>
+                <td>{{prod.cost}}</td>
+                <td>{{prod.status}}</td>
                 <td>
-                  <a href="/request" class="btn btn-primary">Request</a>
+                  <a href="/request/{{prod.id}}/{{this_user.id}}" class="btn btn-primary">Request</a>
                 </td>
               </tr>
-              
+              {% endfor %}
             </tbody>
           </table>
         </div>

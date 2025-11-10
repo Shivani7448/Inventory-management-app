@@ -1,0 +1,7 @@
+First create repo: then use this following commands in git bash terminal
+git status
+git add -A
+git commit -m "message"
+git branch main
+git checkout main
+git push -u origin main

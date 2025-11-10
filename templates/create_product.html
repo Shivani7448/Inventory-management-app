@@ -17,22 +17,22 @@
     <div id="canvas">
       <div id="form-body">
         <h2>Create a new Product</h2>
-        <form action="">
+        <form action="/create" method="post">
           <div class="mb-3">
             <label for="name" class="form-label">Product Name</label>
-            <input type="text" class="form-control" id="name" >
+            <input type="text" class="form-control" id="name" name="name">
           </div>
           <div class="mb-3">
             <label for="category" class="form-label">Product Category</label>
-            <input type="text" class="form-control" id="category" >
+            <input type="text" class="form-control" id="category" name="cat">
           </div>
           <div class="mb-3">
             <label for="qu" class="form-label">Initial Quantity</label>
-            <input type="number" class="form-control" id="qu" >
+            <input type="number" class="form-control" id="qu" name="iq">
           </div>
           <div class="mb-3">
             <label for="cu" class="form-label">Cost/Unit</label>
-            <input type="number" class="form-control" id="cu" >
+            <input type="number" class="form-control" id="cu" name="cu" >
           </div>
           <div class="text-center">
             <input type="submit" class="btn btn-primary" value="Create"><br>
