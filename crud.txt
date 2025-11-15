@@ -1,0 +1,44 @@
+#create database
+python
+>>> from app import *
+>>> db.create_all()
+
+#create
+>>> user1 = User(username="admin123",email="admin@user.com",password="1234",type="admin")
+>>> db.session.add(user1)
+>>> db.session.commit()
+
+>>> user2 = User(username="Yash",email="yash@user.com",password="1234")
+>>> db.session.add(user2)
+>>> db.session.commit()
+
+#update
+>>> user3= User.query.filter_by(username="Yash").first()
+>>> user3
+<User 3>
+>>> user3.username = "Rahul"
+>>> db.session.commit()
+>>> user3.email = "rahul@user.com"   
+>>> db.session.commit()
+
+#delete
+>>> u1 = User.query.get(3)
+>>> db.session.delete(u1)
+>>> db.session.commit()
+
+#read
+>>> users= User.query.all()
+>>> users
+[<User 1>, <User 2>]
+>>> users[0]
+<User 1>
+>>> u1=users[0]            
+>>> u1.username
+'admin123'
+
+#product1 = Product.query.get(1)  object
+product1.requests> [<>,<>] list of req objects
+
+#req = Request.query.get(1) object
+a=req.product> <product2> object
+a.name = "product2"

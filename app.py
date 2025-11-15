@@ -17,7 +17,7 @@ from application.controllers import * #step 2
 if __name__ == '__main__': #run this app only when invoked.
   with app.app_context():
     db.create_all()
-    Manager=User.query.filter_by(username="Manager1").first()
+    Manager=User.query.filter_by(type="manager").first()
     if Manager is None:
       Manager=User(username="Manager1",email="manager@user.com",password="1234",type="manager")
       db.session.add(Manager)

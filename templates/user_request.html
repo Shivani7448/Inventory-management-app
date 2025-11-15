@@ -13,14 +13,14 @@
     <div id="canvas">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Welcome User1</a>
+          <a class="navbar-brand" href="#">Welcome {{this_user.username}}</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Go Back</a>
+                <a class="nav-link active" aria-current="page" href="/home/{{this_user.id}}">Go Back</a>
               </li>
             </ul>
             <form class="d-flex">
@@ -46,20 +46,21 @@
               </tr>
             </thead>
             <tbody>
+              {% for req in all_req %}
               <tr>
-                <th scope="row">1</th>
-                <td>Product1</td>
-                <td>Category1</td>
-                <td>10</td>
-                <td>100</td>
-                <td>1000</td>
-                <td>requested</td>
+                <th scope="row">{{req.id}}</th>
+                <td>{{req.product.name}}</td>
+                <td>{{req.product.category}}</td>
+                <td>{{req.units_requested}}</td>
+                <td>{{req.product.cost}}</td>
+                <td>{{req.units_requested * req.product.cost}}</td>
+                <td>{{req.status}}</td>
               </tr>
-              
+              {% endfor %} 
             </tbody>
           </table>
         </div>
-        <h3 class="headings">Total Amount Payable: 1000</h3>
+        <h3 class="headings">Total Amount Payable: {{total}}</h3>
       </div>
     </div>
   </div>

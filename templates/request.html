@@ -17,20 +17,20 @@
     <div id="canvas">
       <div id="form-body">
         <h2>Create a new Request </h2>
-        <form action="">
+        <form action="/request/{{prod.id}}/{{user.id}}" method="post">
           <div class="mb-3">
             <label for="name" class="form-label">Product Name</label>
-            <input class="form-control" type="text" value="Product1" aria-label="Disabled input example" disabled readonly>
+            <input class="form-control" type="text" value="{{prod.name}}" aria-label="Disabled input example" disabled readonly>
             <!-- <input type="text" class="form-control" id="name" > -->
           </div>
           <div class="mb-3">
             <label for="category" class="form-label">Product Category</label>
-            <input class="form-control" type="text" value="Category1" aria-label="Disabled input example" disabled readonly>
+            <input class="form-control" type="text" value="{{prod.category}}" aria-label="Disabled input example" disabled readonly>
             <!-- <input type="text" class="form-control" id="category" > -->
           </div>
           <div class="mb-3">
             <label for="qu" class="form-label">Units Required </label>
-            <input type="number" class="form-control" id="qu" >
+            <input type="number" class="form-control" id="qu" name="units" >
           </div>
           <div class="text-center">
             <input type="submit" class="btn btn-primary" value="Request"><br>

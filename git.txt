@@ -4,4 +4,5 @@ git add -A
 git commit -m "message"
 git branch main
 git checkout main
-git push -u origin main
+git push -u origin main (only for 1st time)
+later> git push
